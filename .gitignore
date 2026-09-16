@@ -1,0 +1,20 @@
+# 环境变量和密码
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 前端依赖与构建产物
+frontend/node_modules/
+frontend/dist/
+
+# IDE 配置
+.idea/
+.vscode/
+
+# 日志
+*.log
+npm-debug.log*

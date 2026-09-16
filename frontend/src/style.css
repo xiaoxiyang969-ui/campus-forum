@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;             /*让元素的宽度包含内边距和边框，布局更容易计算*/
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  background-color: #f5f7fa;
+  color: #333;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
