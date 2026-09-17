@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "private": true,
+  "start": "serve -s dist -l tcp://0.0.0.0:$PORT",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^1.20.0",
+    "serve": "^14.2.6",
     "vue": "^3.5.41",
     "vue-router": "^5.3.1"
   },
