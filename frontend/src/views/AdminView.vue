@@ -30,7 +30,7 @@ const categoryForm = reactive({
 async function loadUsers() {
   try {
     const response = await axios.get(
-      "http://127.0.0.1:5000/api/admin/users",
+      "https://campus-forum-production-2e9a.up.railway.app/api/admin/users",
       {
         headers: {
           Authorization: `Bearer ${token.value}`
@@ -65,7 +65,7 @@ async function loadUsers() {
 async function loadPosts() {
   try {
     const response = await axios.get(
-      "http://127.0.0.1:5000/api/admin/posts",
+      "https://campus-forum-production-2e9a.up.railway.app/api/admin/posts",
       {
         headers: {
           Authorization: `Bearer ${token.value}`
@@ -100,7 +100,7 @@ async function loadPosts() {
 async function loadComments() {
   try {
     const response = await axios.get(
-      "http://127.0.0.1:5000/api/admin/comments",
+      "https://campus-forum-production-2e9a.up.railway.app/api/admin/comments",
       {
         headers: {
           Authorization: `Bearer ${token.value}`
@@ -135,7 +135,7 @@ async function loadComments() {
 async function loadCategories() {
   try {
     const response = await axios.get(
-      "http://127.0.0.1:5000/api/admin/categories",
+      "https://campus-forum-production-2e9a.up.railway.app/api/admin/categories",
       {
         headers: {
           Authorization: `Bearer ${token.value}`
@@ -176,7 +176,7 @@ async function toggleUserStatus(user) {
 
   try {
     const response = await axios.patch(
-      `http://127.0.0.1:5000/api/admin/users/${user.id}/status`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/admin/users/${user.id}/status`,
       {
         status: newStatus
       },
@@ -214,7 +214,7 @@ async function toggleUserStatus(user) {
 async function updatePostStatus(post, newStatus) {
   try {
     const response = await axios.patch(
-      `http://127.0.0.1:5000/api/admin/posts/${post.id}/status`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/admin/posts/${post.id}/status`,
       {
         status: newStatus
       },
@@ -251,7 +251,7 @@ async function updatePostStatus(post, newStatus) {
 async function updateCommentStatus(comment, newStatus) {
   try {
     const response = await axios.patch(
-      `http://127.0.0.1:5000/api/admin/comments/${comment.id}/status`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/admin/comments/${comment.id}/status`,
       {
         status: newStatus
       },
@@ -294,7 +294,7 @@ async function toggleCategoryStatus(category) {
 
   try {
     const response = await axios.patch(
-      `http://127.0.0.1:5000/api/admin/categories/${category.id}/status`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/admin/categories/${category.id}/status`,
       {
         status: newStatus
       },
@@ -333,7 +333,7 @@ async function toggleCategoryStatus(category) {
 async function createCategory() {
   try {
     const response = await axios.post(
-      "http://127.0.0.1:5000/api/admin/categories",
+      "https://campus-forum-production-2e9a.up.railway.app/api/admin/categories",
       categoryForm,
       {
         headers: {

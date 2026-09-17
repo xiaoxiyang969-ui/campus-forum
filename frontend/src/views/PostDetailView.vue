@@ -17,13 +17,13 @@ async function loadPost() {
   try {
     //获取帖子详情
     const response = await axios.get(
-        `http://127.0.0.1:5000/api/posts/${postId}`
+        `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}`
     )
     post.value = response.data.data
 
     //获取评论数据
     const commentsResponse = await axios.get(
-        `http://127.0.0.1:5000/api/posts/${postId}/comments`
+        `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}/comments`
     )
     comments.value = commentsResponse.data.data
 
@@ -52,7 +52,7 @@ async function submitComment() {
 
   try {
   await axios.post(
-    `http://127.0.0.1:5000/api/posts/${postId}/comments`,
+    `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}/comments`,
     {
       content: newComment.value
     },
@@ -66,7 +66,7 @@ async function submitComment() {
   newComment.value = ""
 
   const commentsResponse = await axios.get(
-    `http://127.0.0.1:5000/api/posts/${postId}/comments`
+    `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}/comments`
   )
 
   comments.value = commentsResponse.data.data
@@ -101,7 +101,7 @@ async function likePost() {
 
   try {
     await axios.post(
-      `http://127.0.0.1:5000/api/posts/${postId}/likes`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}/likes`,
       {},
       {
         headers: {
@@ -141,7 +141,7 @@ async function unlikePost() {
 
   try {
     await axios.delete(
-      `http://127.0.0.1:5000/api/posts/${postId}/likes`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}/likes`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -183,7 +183,7 @@ async function favoritePost() {
 
   try {
     await axios.post(
-      `http://127.0.0.1:5000/api/posts/${postId}/favorites`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}/favorites`,
       {},
       {
         headers: {
@@ -224,7 +224,7 @@ async function unfavoritePost() {
 
   try {
     await axios.delete(
-      `http://127.0.0.1:5000/api/posts/${postId}/favorites`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}/favorites`,
       {
         headers: {
           Authorization: `Bearer ${token}`

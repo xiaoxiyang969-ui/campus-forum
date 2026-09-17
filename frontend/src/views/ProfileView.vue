@@ -28,7 +28,7 @@ async function loadProfile() {
   try {
     //获取一个用户对象，保存到：user.value
     const response = await axios.get(       //GET 一般不需要请求体
-        "http://127.0.0.1:5000/api/auth/me",
+        "https://campus-forum-production-2e9a.up.railway.app/api/auth/me",
         {
           headers: {
             Authorization: `Bearer ${token.value}`
@@ -41,7 +41,7 @@ async function loadProfile() {
 
     //获取当前用户发布的帖子数组，保存到：posts.value
     const postsResponse = await axios.get(
-        "http://127.0.0.1:5000/api/users/me/posts",
+        "https://campus-forum-production-2e9a.up.railway.app/api/users/me/posts",
         {
           headers: {
             Authorization: `Bearer ${token.value}`
@@ -53,7 +53,7 @@ async function loadProfile() {
 
     //我的收藏
     const favoritesResponse = await axios.get(
-        "http://127.0.0.1:5000/api/users/me/favorites",
+        "https://campus-forum-production-2e9a.up.railway.app/api/users/me/favorites",
         {
           headers: {
             Authorization: `Bearer ${token.value}`
@@ -97,7 +97,7 @@ async function deleteMyPost(postId) {
 
   try {
     await axios.delete(
-      `http://127.0.0.1:5000/api/posts/${postId}`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}`,
       {
         headers: {
           Authorization: `Bearer ${token.value}`
@@ -124,7 +124,7 @@ async function updateProfile() {
 
   try {
     const response = await axios.patch(
-      "http://127.0.0.1:5000/api/auth/me",
+      "https://campus-forum-production-2e9a.up.railway.app/api/auth/me",
       profileForm,
       {
         headers: {

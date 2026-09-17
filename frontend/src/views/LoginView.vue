@@ -24,7 +24,7 @@ async function handleSubmit() {
 
   try {
     const response = await axios.post(
-      "http://127.0.0.1:5000/api/auth/login",
+      "https://campus-forum-production-2e9a.up.railway.app/api/auth/login",
       form
     )
 

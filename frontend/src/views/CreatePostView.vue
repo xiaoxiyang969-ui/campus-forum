@@ -24,7 +24,7 @@ const router = useRouter()
 async function loadCategories() {
   try {
     const response = await axios.get(
-      "http://127.0.0.1:5000/api/categories"
+      "https://campus-forum-production-2e9a.up.railway.app/api/categories"
     )
 
     categories.value = response.data.data
@@ -52,7 +52,7 @@ async function handleSubmit() {
 
   try {
     const response = await axios.post(
-      "http://127.0.0.1:5000/api/posts",
+      "https://campus-forum-production-2e9a.up.railway.app/api/posts",
       form,
       {
         headers: {

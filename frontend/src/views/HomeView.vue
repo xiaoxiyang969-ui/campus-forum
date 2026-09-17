@@ -21,7 +21,7 @@ const selectedCategoryId = ref("")
 async function loadCategories() {
   try {
     const response = await axios.get(
-      "http://127.0.0.1:5000/api/categories"
+      "https://campus-forum-production-2e9a.up.railway.app/api/categories"
     )
 
     categories.value = response.data.data
@@ -37,7 +37,7 @@ async function loadPosts(page = 1) {
     loading.value = true
 
     const response = await axios.get(
-        "http://127.0.0.1:5000/api/posts",
+        "https://campus-forum-production-2e9a.up.railway.app/api/posts",
         {
           params: {
             page: page,

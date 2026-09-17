@@ -34,7 +34,7 @@ async function loadEditData() {
 
   try {
     const postResponse = await axios.get(
-      `http://127.0.0.1:5000/api/posts/${postId}`
+      `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}`
     )
 
     const post = postResponse.data.data
@@ -44,7 +44,7 @@ async function loadEditData() {
     form.category_id = post.category.id
 
     const categoriesResponse = await axios.get(
-      "http://127.0.0.1:5000/api/categories"
+      "https://campus-forum-production-2e9a.up.railway.app/api/categories"
     )
 
     categories.value = categoriesResponse.data.data
@@ -71,7 +71,7 @@ async function handleSubmit() {
 
   try {
     const response = await axios.patch(
-      `http://127.0.0.1:5000/api/posts/${postId}`,
+      `https://campus-forum-production-2e9a.up.railway.app/api/posts/${postId}`,
       form,
       {
         headers: {
