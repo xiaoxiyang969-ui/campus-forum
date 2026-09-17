@@ -6,3 +6,4 @@ python-dotenv
 cryptography
 Flask-JWT-Extended
 Flask-Cors
+gunicorn
