@@ -24,7 +24,10 @@ load_dotenv()
 app = Flask(__name__)
 CORS(
     app,
-    origins=["http://localhost:5173"]
+    origins=[
+        "http://localhost:5173",
+        "https://nurturing-spontaneity-production-ade0.up.railway.app"
+    ]
 )
 app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=2)
