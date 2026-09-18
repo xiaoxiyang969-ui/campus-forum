@@ -17,6 +17,7 @@ from flask_jwt_extended import (
 )
 from sqlalchemy import or_
 from flask_cors import CORS
+from datetime import timezone
 
 
 load_dotenv()
@@ -619,7 +620,7 @@ def get_post(post_id):
                 "id": post.category.id,
                 "name": post.category.name
             },
-            "created_at": post.created_at.isoformat()
+            "created_at": post.created_at.replace(tzinfo=timezone.utc).isoformat()
         }
     }), 200
 
@@ -693,7 +694,7 @@ def get_comments(post_id):
                 "id": comment.author.id,
                 "username": comment.author.username
             },
-            "created_at": comment.created_at.isoformat()
+            "created_at": comment.created_at.replace(tzinfo=timezone.utc).isoformat()
         })
 
     return jsonify({
@@ -860,7 +861,7 @@ def get_my_favorites():
 
         data.append({
             "id": favorite.id,
-            "favorited_at": favorite.created_at.isoformat(),
+            "favorited_at": favorite.created_at.replace(tzinfo=timezone.utc).isoformat(),
             "post": {
                 "id": post.id,
                 "title": post.title
@@ -1082,7 +1083,7 @@ def get_my_posts():
                 "id": post.category.id,
                 "name": post.category.name
             },
-            "created_at": post.created_at.isoformat()
+            "created_at": post.created_at.replace(tzinfo=timezone.utc).isoformat()
         })
 
     return jsonify({
@@ -1180,7 +1181,7 @@ def get_admin_users():
             "email": user.email,
             "role": user.role,
             "status": user.status,
-            "created_at": user.created_at.isoformat()
+            "created_at": user.created_at.replace(tzinfo=timezone.utc).isoformat()
         })
 
     return jsonify({
@@ -1286,7 +1287,7 @@ def get_admin_posts():
                 "id": post.category.id,
                 "name": post.category.name
             },
-            "created_at": post.created_at.isoformat()
+            "created_at": post.created_at.replace(tzinfo=timezone.utc).isoformat()
         })
 
     return jsonify({
@@ -1390,7 +1391,7 @@ def get_admin_comments():
                 "id": comment.post.id,
                 "title": comment.post.title
             },
-            "created_at": comment.created_at.isoformat()
+            "created_at": comment.created_at.replace(tzinfo=timezone.utc).isoformat()
         })
 
     return jsonify({
